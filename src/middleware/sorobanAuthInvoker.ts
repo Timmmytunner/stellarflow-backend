@@ -1,7 +1,6 @@
 import { createHash, createPublicKey, verify } from "node:crypto";
 import { xdr } from "@stellar/stellar-sdk";
 
-
 export interface SorobanInvokerEnvelope {
   authorizationEntryXdr: string;
   signaturePayload: string;
@@ -74,7 +73,7 @@ export function validateSorobanInvoker(
   return {
     valid: true,
     address,
-    validUntilLedge: envelope.validUntilLedger,
+    validUntilLedger: envelope.validUntilLedger,
   };
 }
 
